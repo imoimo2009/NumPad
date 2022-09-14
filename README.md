@@ -36,4 +36,4 @@ $tp = New-Object NumPad(<int:左端位置>,<int:上端位置>,<int:幅>,<int:高
 | :--- | :---: | :--- |
 | Open() | void | NumPadを開く |
 | Open(\<string:文字列\>) | void | 文字列を指定してNumPadを開く |
-| Close() | void | NumPadを開く |
+| Close() | void | NumPadを閉じる |
