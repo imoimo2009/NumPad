@@ -1,12 +1,10 @@
-# TimePicker
+# NumPad
 
-Androidみたいな時刻入力をPowerShellで作ってみたくてやらかしました。
+電卓風の数値入力をPowerShellで作ってみたくてまたしてもやらかしました。
 
 ## 画面イメージ
 
-| 時間入力モード | 分入力モード |
-| :---: | :---: |
-| ![時間](img/hour.png) | ![分数](img/minute.png) |
+![画面イメージ](img/image.png)
 
 ## つかいかた
 
@@ -14,39 +12,28 @@ Androidみたいな時刻入力をPowerShellで作ってみたくてやらかし
 
 ```powershell
 # デフォルトのサイズでインスタンスを作成
-$tp = New-Object TimePicker
+$tp = New-Object NumPad
 
 # 指定位置かつデフォルトのサイズでインスタンスを作成
-$tp = New-Object TimePicker(<int:左端位置>,<int:上端位置>)
+$tp = New-Object NumPad(<int:左端位置>,<int:上端位置>)
 
 # 指定位置とサイズでインスタンスを作成
-$tp = New-Object TimePicker(<int:左端位置>,<int:上端位置>,<int:幅>,<int:高さ>)
+$tp = New-Object NumPad(<int:左端位置>,<int:上端位置>,<int:幅>,<int:高さ>)
 ```
 
 ### プロパティ
 
 | プロパティ名称 | 型 | 規定値 | 説明 |
 | :--- | :---: | :---: | :--- |
-| Hour | int | 0 | 時間を示す整数値 |
-| Minute | int | 0 | 分を示す整数値 |
-| AutoNext | bool | false | true = 値入力時、次の項目に自動遷移する |
 | Caption | string | "" | キャプション文字列 |
-| Text | string | "00:00" | 時刻文字列 |
+| TextLength | int | 9 | 文字列の最大長 |
+| Text | string | "" | 数値文字列 |
+| Value | int | 0 | 数値 |
 
 ### メソッド
 
 | メソッド名称 | 返り値 | 説明 |
 | :--- | :---: | :--- |
-| Open() | void | TimePickerを開く |
-| Open(\<int:表示・入力モード\>) | void | 入力・表示モードを指定してTimePickerを表示する |
-| Close() | void | TimePickerを開く |
-| SetMode(\<int:表示・入力モード\>) | void | 入力・表示モードを指定する |
-
-### 定数
-
-| 定数名称 | 型 | 値 | 説明 |
-| :--- | :---: | :---: | :--- |
-| ModeHour | int | 0 | 時間入力モード |
-| ModeMinute | int | 1 | 分入力モード |
-| ModeMorning | int | 2 | 午前表示モード |
-| ModeAfternoon | int | 4 | 午後表示モード |
+| Open() | void | NumPadを開く |
+| Open(\<string:文字列\>) | void | 文字列を指定してNumPadを開く |
+| Close() | void | NumPadを開く |
